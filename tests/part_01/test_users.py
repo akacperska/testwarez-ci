@@ -8,7 +8,7 @@ def test_get_user_request():
     user_data = user_response.json()['data']
 
     assert (user_response.status_code == 200), f"Status Code validation failed for {user_response.request.url}"
-    assert (user_data['id'] == 2), "User Id verfication failed"
+    assert (user_data['id'] == 1), "User Id verfication failed"
     assert (user_data['email'] == "janet.weaver@reqres.in"), "User Id verfication failed"
     assert (user_data['first_name'] == "Janet"), "First Name verfication failed"
     assert (user_data['last_name'] == "Weaver"), "Last Name verfication failed"
@@ -23,7 +23,7 @@ def test_get_user_list_request():
     user_lists_root_data = get_users_list_response.json()
 
     assert (get_users_list_response.status_code == 200), f"Status Code validation failed for {get_users_list_response.request.url}"
-    assert (user_lists_root_data['page'] == 2), "Page verfication failed"
+    assert (user_lists_root_data['page'] == 1), "Page verfication failed"
     assert (user_lists_root_data['per_page'] == 6), "Per_Page verfication failed"
     assert (user_lists_root_data['total'] == 12), "Total verfication failed"
     assert (user_lists_root_data['total_pages'] == 2), "Total_Pages verfication failed"
